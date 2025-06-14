@@ -1,0 +1,189 @@
+.header {
+  background-color: #2c2c2c;
+  color: white;
+  padding: 1rem 0;
+
+  .topBar {
+    background-color: #1a1a1a;
+    padding: 0.5rem 0;
+    font-size: 0.875rem;
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 1rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .contactInfo {
+      display: flex;
+      gap: 2rem;
+
+      .contactItem {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        color: #ccc;
+
+        .icon {
+          width: 16px;
+          height: 16px;
+        }
+      }
+    }
+
+    .authSection {
+      .authLinks {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+
+        .separator {
+          color: #666;
+          margin: 0 0.5rem;
+        }
+
+        .loginLink {
+          display: flex;
+          align-items: center;
+          gap: 0.5rem;
+          color: #ff4444;
+          text-decoration: none;
+          transition: color 0.2s;
+
+          &:hover {
+            color: #ff6666;
+          }
+
+          .icon {
+            width: 16px;
+            height: 16px;
+          }
+        }
+
+        .registerLink {
+          color: #ff4444;
+          text-decoration: none;
+          transition: color 0.2s;
+
+          &:hover {
+            color: #ff6666;
+          }
+        }
+      }
+
+      .userInfo {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+
+        .userName {
+          color: #fff;
+          font-weight: 500;
+        }
+
+        .logoutButton {
+          background: none;
+          border: none;
+          color: #ff4444;
+          cursor: pointer;
+          display: flex;
+          align-items: center;
+          gap: 0.5rem;
+          transition: color 0.2s;
+
+          &:hover {
+            color: #ff6666;
+          }
+
+          .icon {
+            width: 16px;
+            height: 16px;
+          }
+        }
+      }
+    }
+  }
+
+  .mainHeader {
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 1rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo {
+      font-size: 2rem;
+      font-weight: bold;
+      color: white;
+      text-decoration: none;
+
+      .dot {
+        color: #ff4444;
+      }
+    }
+
+    .nav {
+      display: flex;
+      gap: 2rem;
+
+      .navLink {
+        color: #ccc;
+        text-decoration: none;
+        transition: color 0.2s;
+        padding: 0.5rem 0;
+        position: relative;
+
+        &:hover {
+          color: white;
+        }
+
+        &.active {
+          color: white;
+          
+          &::after {
+            content: '';
+            position: absolute;
+            bottom: -0.5rem;
+            left: 0;
+            right: 0;
+            height: 2px;
+            background-color: #ff4444;
+          }
+        }
+      }
+    }
+  }
+
+  @media (max-width: 768px) {
+    .topBar {
+      .container {
+        flex-direction: column;
+        gap: 0.5rem;
+      }
+
+      .contactInfo {
+        gap: 1rem;
+        flex-wrap: wrap;
+      }
+    }
+
+    .mainHeader {
+      .container {
+        flex-direction: column;
+        gap: 1rem;
+      }
+
+      .nav {
+        gap: 1rem;
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+    }
+  }
+}
