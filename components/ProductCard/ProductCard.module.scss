@@ -2,7 +2,7 @@
   background: white;
   border-radius: 8px;
   overflow: hidden;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 10%);
   transition: transform 0.2s, box-shadow 0.2s;
   height: 100%;
   display: flex;
@@ -10,7 +10,7 @@
 
   &:hover {
     transform: translateY(-4px);
-    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 15%);
   }
 
   .imageContainer {
@@ -65,8 +65,8 @@
 
   .price {
     font-size: 1.25rem;
-    font-weight: bold;
-    color: #ff4444;
+    font-weight: 700;
+    color: #f44;
   }
 
   .addToCartButton {

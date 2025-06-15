@@ -16,14 +16,14 @@
     background: white;
     padding: 3rem 2rem;
     border-radius: 8px;
-    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 10%);
     width: 100%;
     max-width: 400px;
   }
 
   .title {
     font-size: 2rem;
-    font-weight: bold;
+    font-weight: 700;
     text-align: center;
     color: #333;
     margin-bottom: 2rem;
@@ -52,21 +52,23 @@
     border: 1px solid #ddd;
     border-radius: 4px;
     font-size: 1rem;
-    transition: border-color 0.2s, box-shadow 0.2s;
+    transition:
+      border-color 0.2s,
+      box-shadow 0.2s;
 
     &:focus {
       outline: none;
       border-color: #2c2c2c;
-      box-shadow: 0 0 0 2px rgba(44, 44, 44, 0.1);
+      box-shadow: 0 0 0 2px rgba(44, 44, 44, 10%);
     }
 
     &.error {
-      border-color: #ff4444;
+      border-color: #f44;
     }
   }
 
   .errorMessage {
-    color: #ff4444;
+    color: #f44;
     font-size: 0.875rem;
     margin-top: 0.25rem;
   }
@@ -83,13 +85,13 @@
     transition: background-color 0.2s;
     margin-top: 1rem;
 
-    &:hover:not(:disabled) {
-      background-color: #1a1a1a;
-    }
-
     &:disabled {
       background-color: #ccc;
       cursor: not-allowed;
+    }
+
+    &:hover:not(:disabled) {
+      background-color: #1a1a1a;
     }
   }
 
@@ -101,23 +103,6 @@
     font-size: 0.875rem;
     text-align: center;
     margin-top: 1rem;
-  }
-
-  .registerLink {
-    text-align: center;
-    margin-top: 1.5rem;
-    color: #666;
-    font-size: 0.875rem;
-
-    a {
-      color: #2c2c2c;
-      text-decoration: none;
-      font-weight: 500;
-
-      &:hover {
-        text-decoration: underline;
-      }
-    }
   }
 
   @media (max-width: 480px) {

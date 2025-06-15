@@ -39,7 +39,7 @@ const Header = () => {
               <span>1734 Stonecoal Road</span>
             </div>
           </div>
-          
+
           <div className={styles.authSection}>
             {isAuthenticated && user ? (
               <div className={styles.userInfo}>
@@ -57,55 +57,51 @@ const Header = () => {
                   <User className={styles.icon} />
                   Login
                 </Link>
-                <span className={styles.separator}>|</span>
-                <Link href="/register" className={styles.registerLink}>
-                  Register
-                </Link>
               </div>
             )}
           </div>
         </div>
       </div>
-      
+
       <div className={styles.mainHeader}>
         <div className={styles.container}>
           <Link href="/" className={styles.logo}>
             Abelohost Shop<span className={styles.dot}>.</span>
           </Link>
-          
+
           <nav className={styles.nav}>
-            <Link 
-              href="/" 
+            <Link
+              href="/"
               className={`${styles.navLink} ${isActiveLink('/') ? styles.active : ''}`}
             >
               Home
             </Link>
-            <Link 
-              href="/hot-deals" 
+            <Link
+              href="/hot-deals"
               className={`${styles.navLink} ${isActiveLink('/hot-deals') ? styles.active : ''}`}
             >
               Hot Deals
             </Link>
-            <Link 
-              href="/laptops" 
+            <Link
+              href="/laptops"
               className={`${styles.navLink} ${isActiveLink('/laptops') ? styles.active : ''}`}
             >
               Laptops
             </Link>
-            <Link 
-              href="/smartphones" 
+            <Link
+              href="/smartphones"
               className={`${styles.navLink} ${isActiveLink('/smartphones') ? styles.active : ''}`}
             >
               Smartphones
             </Link>
-            <Link 
-              href="/cameras" 
+            <Link
+              href="/cameras"
               className={`${styles.navLink} ${isActiveLink('/cameras') ? styles.active : ''}`}
             >
               Cameras
             </Link>
-            <Link 
-              href="/accessories" 
+            <Link
+              href="/accessories"
               className={`${styles.navLink} ${isActiveLink('/accessories') ? styles.active : ''}`}
             >
               Accessories

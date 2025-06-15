@@ -1,5 +1,5 @@
 import axios, { AxiosError } from 'axios';
-import { LoginCredentials, LoginResponse, RegisterCredentials, ProductsResponse, APIError } from '@/types/api';
+import { LoginCredentials, LoginResponse, ProductsResponse, APIError } from '@/types/api';
 
 const API_BASE_URL = 'https://dummyjson.com';
 
@@ -24,7 +24,7 @@ api.interceptors.response.use(
   (response) => response,
   (error: AxiosError) => {
     const apiError: APIError = {
-      message: error.response?.data?.message || error.message || 'An error occurred',
+      message: (error.response?.data as any)?.message || error.message || 'An error occurred',
       status: error.response?.status,
     };
     return Promise.reject(apiError);
@@ -36,19 +36,6 @@ export const authAPI = {
     const response = await api.post('/auth/login', credentials);
     return response.data;
   },
-
-  register: async (credentials: RegisterCredentials): Promise<void> => {
-    // Since DummyJSON doesn't have a real register endpoint, we'll simulate it
-    // In a real app, this would be a POST to /auth/register
-    const response = await api.post('/users/add', {
-      firstName: credentials.firstName,
-      lastName: credentials.lastName,
-      username: credentials.username,
-      email: credentials.email,
-      password: credentials.password,
-    });
-    return response.data;
-  },
 };
 
 export const productsAPI = {
@@ -57,7 +44,10 @@ export const productsAPI = {
     return response.data;
   },
 
-  getProductsByCategory: async (category: string, limit: number = 12): Promise<ProductsResponse> => {
+  getProductsByCategory: async (
+    category: string,
+    limit: number = 12
+  ): Promise<ProductsResponse> => {
     const response = await api.get(`/products/category/${category}?limit=${limit}`);
     return response.data;
   },

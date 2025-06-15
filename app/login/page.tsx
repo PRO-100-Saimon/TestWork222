@@ -2,7 +2,6 @@
 
 import { useState, useEffect } from 'react';
 import { useRouter } from 'next/navigation';
-import Link from 'next/link';
 import { useAuthStore } from '@/store/auth';
 import Header from '@/components/Header/Header';
 import Footer from '@/components/Footer/Footer';
@@ -21,12 +20,12 @@ interface FormErrors {
 const LoginPage = () => {
   const router = useRouter();
   const { login, isAuthenticated, isLoading, error, clearError } = useAuthStore();
-  
+
   const [formData, setFormData] = useState<FormData>({
     username: '',
     password: '',
   });
-  
+
   const [formErrors, setFormErrors] = useState<FormErrors>({});
 
   useEffect(() => {
@@ -60,14 +59,14 @@ const LoginPage = () => {
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target;
-    setFormData(prev => ({
+    setFormData((prev) => ({
       ...prev,
       [name]: value,
     }));
 
     // Clear field error when user starts typing
     if (formErrors[name as keyof FormErrors]) {
-      setFormErrors(prev => ({
+      setFormErrors((prev) => ({
         ...prev,
         [name]: undefined,
       }));
@@ -76,7 +75,7 @@ const LoginPage = () => {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    
+
     if (!validateForm()) {
       return;
     }
@@ -100,11 +99,11 @@ const LoginPage = () => {
   return (
     <div className={styles.loginPage}>
       <Header />
-      
+
       <main className={styles.main}>
         <div className={styles.loginContainer}>
           <h1 className={styles.title}>Login</h1>
-          
+
           <form onSubmit={handleSubmit} className={styles.form}>
             <div className={styles.formGroup}>
               <label htmlFor="username" className={styles.label}>
@@ -121,9 +120,7 @@ const LoginPage = () => {
                 disabled={isLoading}
               />
               {formErrors.username && (
-                <span className={styles.errorMessage}>
-                  {formErrors.username}
-                </span>
+                <span className={styles.errorMessage}>{formErrors.username}</span>
               )}
             </div>
 
@@ -142,33 +139,19 @@ const LoginPage = () => {
                 disabled={isLoading}
               />
               {formErrors.password && (
-                <span className={styles.errorMessage}>
-                  {formErrors.password}
-                </span>
+                <span className={styles.errorMessage}>{formErrors.password}</span>
               )}
             </div>
 
-            <button
-              type="submit"
-              disabled={isLoading}
-              className={styles.submitButton}
-            >
+            <button type="submit" disabled={isLoading} className={styles.submitButton}>
               {isLoading ? 'Logging in...' : 'Login'}
             </button>
 
-            {error && (
-              <div className={styles.generalError}>
-                {error}
-              </div>
-            )}
+            {error && <div className={styles.generalError}>{error}</div>}
           </form>
-
-          <div className={styles.registerLink}>
-            Don't have an account? <Link href="/register">Register here</Link>
-          </div>
         </div>
       </main>
-      
+
       <Footer />
     </div>
   );

@@ -40,36 +40,21 @@
         align-items: center;
         gap: 0.5rem;
 
-        .separator {
-          color: #666;
-          margin: 0 0.5rem;
-        }
-
         .loginLink {
           display: flex;
           align-items: center;
           gap: 0.5rem;
-          color: #ff4444;
+          color: #f44;
           text-decoration: none;
           transition: color 0.2s;
 
           &:hover {
-            color: #ff6666;
+            color: #f66;
           }
 
           .icon {
             width: 16px;
             height: 16px;
-          }
-        }
-
-        .registerLink {
-          color: #ff4444;
-          text-decoration: none;
-          transition: color 0.2s;
-
-          &:hover {
-            color: #ff6666;
           }
         }
       }
@@ -87,7 +72,7 @@
         .logoutButton {
           background: none;
           border: none;
-          color: #ff4444;
+          color: #f44;
           cursor: pointer;
           display: flex;
           align-items: center;
@@ -95,7 +80,7 @@
           transition: color 0.2s;
 
           &:hover {
-            color: #ff6666;
+            color: #f66;
           }
 
           .icon {
@@ -119,12 +104,12 @@
 
     .logo {
       font-size: 2rem;
-      font-weight: bold;
+      font-weight: 700;
       color: white;
       text-decoration: none;
 
       .dot {
-        color: #ff4444;
+        color: #f44;
       }
     }
 
@@ -145,7 +130,7 @@
 
         &.active {
           color: white;
-          
+
           &::after {
             content: '';
             position: absolute;
@@ -153,7 +138,7 @@
             left: 0;
             right: 0;
             height: 2px;
-            background-color: #ff4444;
+            background-color: #f44;
           }
         }
       }
