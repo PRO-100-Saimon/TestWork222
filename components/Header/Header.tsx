@@ -95,10 +95,10 @@ const Header = () => {
               Smartphones
             </Link>
             <Link
-              href="/cameras"
-              className={`${styles.navLink} ${isActiveLink('/cameras') ? styles.active : ''}`}
+              href="/mobile-accessories"
+              className={`${styles.navLink} ${isActiveLink('/mobile-accessories') ? styles.active : ''}`}
             >
-              Cameras
+              Mobile Accessories
             </Link>
             <Link
               href="/accessories"
