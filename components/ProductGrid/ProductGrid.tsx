@@ -1,16 +1,15 @@
 'use client';
 
-import { useEffect } from 'react';
+import React from 'react';
 import { useProductsStore } from '@/store/products';
 import ProductCard from '@/components/ProductCard/ProductCard';
 import styles from './ProductGrid.module.scss';
 
 const ProductGrid = () => {
-  const { products, isLoading, error, fetchProducts } = useProductsStore();
+  const { products, isLoading, error } = useProductsStore();
 
-  useEffect(() => {
-    fetchProducts();
-  }, [fetchProducts]);
+  // Убираем автоматический вызов fetchProducts - 
+  // теперь каждая страница сама управляет загрузкой товаров
 
   if (isLoading) {
     return (
